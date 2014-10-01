@@ -1,5 +1,0 @@
-C:\dev\FFCG.StringCalculator\FFCG.StringCalculatorTest\bin\Debug\FFCG.StringCalculatorTest.dll
-C:\dev\FFCG.StringCalculator\FFCG.StringCalculatorTest\bin\Debug\FFCG.StringCalculatorTest.pdb
-C:\dev\FFCG.StringCalculator\FFCG.StringCalculatorTest\obj\Debug\FFCG.StringCalculatorTest.csprojResolveAssemblyReference.cache
-C:\dev\FFCG.StringCalculator\FFCG.StringCalculatorTest\obj\Debug\FFCG.StringCalculatorTest.dll
-C:\dev\FFCG.StringCalculator\FFCG.StringCalculatorTest\obj\Debug\FFCG.StringCalculatorTest.pdb
