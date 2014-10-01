@@ -18,9 +18,8 @@ namespace FFCG.StringCalculator
                 return 0;
             if (numbers.Contains(","))
             {
-                int sum;
                 int[] ints = numbers.Split(',').Select(int.Parse).ToArray();
-                sum = ints.Sum();
+                int sum = ints.Sum();
                 return sum;
             }
             return Convert.ToInt32(numbers);
