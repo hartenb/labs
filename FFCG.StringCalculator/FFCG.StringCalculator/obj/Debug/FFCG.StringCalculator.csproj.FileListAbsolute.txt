@@ -1,0 +1,7 @@
+C:\dev\FFCG.StringCalculator\FFCG.StringCalculator\bin\Debug\FFCG.StringCalculator.dll
+C:\dev\FFCG.StringCalculator\FFCG.StringCalculator\bin\Debug\FFCG.StringCalculator.pdb
+C:\dev\FFCG.StringCalculator\FFCG.StringCalculator\bin\Debug\nunit.framework.dll
+C:\dev\FFCG.StringCalculator\FFCG.StringCalculator\bin\Debug\nunit.framework.xml
+C:\dev\FFCG.StringCalculator\FFCG.StringCalculator\obj\Debug\FFCG.StringCalculator.csprojResolveAssemblyReference.cache
+C:\dev\FFCG.StringCalculator\FFCG.StringCalculator\obj\Debug\FFCG.StringCalculator.dll
+C:\dev\FFCG.StringCalculator\FFCG.StringCalculator\obj\Debug\FFCG.StringCalculator.pdb
