@@ -1,0 +1,7 @@
+C:\dev\labs\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\FFCG.WordReverser.dll
+C:\dev\labs\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\FFCG.WordReverser.pdb
+C:\dev\labs\FFCG.WordReverser\FFCG.WordReverser\obj\Debug\FFCG.WordReverser.csprojResolveAssemblyReference.cache
+C:\dev\labs\FFCG.WordReverser\FFCG.WordReverser\obj\Debug\FFCG.WordReverser.dll
+C:\dev\labs\FFCG.WordReverser\FFCG.WordReverser\obj\Debug\FFCG.WordReverser.pdb
+C:\dev\labs\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\nunit.framework.dll
+C:\dev\labs\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\nunit.framework.xml
