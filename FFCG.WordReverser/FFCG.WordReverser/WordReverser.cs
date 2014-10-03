@@ -11,30 +11,31 @@ namespace FFCG.WordReverser
     {
         public string ReverseWords(string text)
         {
-            List<Tuple<int, string>> listOfTuples = new List<Tuple<int, string>>();
-            string[] customString = text.Split(' ');
-            for (int i = 0; i < customString.Length; i++)
+            List<Tuple<int, string>> listOfDelimiters = new List<Tuple<int, string>>();
+            string[] arrayOfWordsToReverse = text.Split(' ');
+            
+            for (int i = 0; i < arrayOfWordsToReverse.Length; i++)
             {
-                string currentWord = customString[i];
+                string currentWord = arrayOfWordsToReverse[i];
                 if (ContainsDelimiter(currentWord))
                 {
-                    CreateTuple(i, customString, listOfTuples);
+                    CreateTuple(i, arrayOfWordsToReverse, listOfDelimiters);
                 }
             }
-            Array.Reverse(customString);
-            if (listOfTuples.Count > 0)
+            
+            Array.Reverse(arrayOfWordsToReverse);
+            
+            if (listOfDelimiters.Count > 0)
             {
-                for (int i = 0; i < listOfTuples.Count; i++)
+                for (int i = 0; i < listOfDelimiters.Count; i++)
                 {
-                    int positionToChange = listOfTuples[i].Item1;
-                    string charToAdd = listOfTuples[i].Item2;
-                    customString[positionToChange] = string.Concat(customString[positionToChange], charToAdd);
+                    int positionToChange = listOfDelimiters[i].Item1;
+                    string charToAdd = listOfDelimiters[i].Item2;
+                    arrayOfWordsToReverse[positionToChange] = string.Concat(arrayOfWordsToReverse[positionToChange], charToAdd);
                 }
-               
             }
            
-            string result = string.Join(" ", customString);
-            return result;
+            return string.Join(" ", arrayOfWordsToReverse);
         }
 
         private static void CreateTuple(int i, string[] customString, List<Tuple<int, string>> listOfTuples)

@@ -14,15 +14,14 @@ namespace FFCG.StringCalculator
     {
         public int Add(string numbers)
         {
-            if (numbers == "")
-                return 0;
-            if (numbers.Contains(","))
-            {
-                int[] ints = numbers.Split(',').Select(int.Parse).ToArray();
-                int sum = ints.Sum();
-                return sum;
-            }
-            return Convert.ToInt32(numbers);
+            if (numbers == "") return 0;
+            
+            if (!numbers.Contains(",")) return Convert.ToInt32(numbers);
+            
+            var ints = numbers.Split(',').Select(int.Parse).ToArray();
+            var sum = ints.Sum();
+           
+            return sum;
         }
     }
 
