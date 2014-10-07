@@ -1,0 +1,7 @@
+C:\dev\VKH.FizzbBuzz\VKH.FizzbBuzz\bin\Debug\VKH.FizzbBuzz.dll
+C:\dev\VKH.FizzbBuzz\VKH.FizzbBuzz\bin\Debug\VKH.FizzbBuzz.pdb
+C:\dev\VKH.FizzbBuzz\VKH.FizzbBuzz\obj\Debug\VKH.FizzbBuzz.csprojResolveAssemblyReference.cache
+C:\dev\VKH.FizzbBuzz\VKH.FizzbBuzz\obj\Debug\VKH.FizzbBuzz.dll
+C:\dev\VKH.FizzbBuzz\VKH.FizzbBuzz\obj\Debug\VKH.FizzbBuzz.pdb
+C:\dev\VKH.FizzbBuzz\VKH.FizzbBuzz\bin\Debug\nunit.framework.dll
+C:\dev\VKH.FizzbBuzz\VKH.FizzbBuzz\bin\Debug\nunit.framework.xml
