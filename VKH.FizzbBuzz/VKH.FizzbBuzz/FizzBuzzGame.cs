@@ -44,7 +44,8 @@ namespace VKH.FizzbBuzz
     {
 
         [TestCase(0, "fizzbuzz")]
-        public void TestFor_fizzbuzz(int number, string expected)
+        [TestCase(15, "fizzbuzz")]
+        public void NumberDivisibleByThreeAndFive_Return_fizzbuzz(int number, string expected)
         {
             ArrangeActAssert(number, expected);
         }
@@ -57,19 +58,19 @@ namespace VKH.FizzbBuzz
         [TestCase(4, "4")]
         [TestCase(2, "2")]
         [TestCase(1, "1")]
-        public void TestFor_PlainNumber(int number, string expected)
+        public void NumberNotDivisibleByThreeAndFive_Return_number(int number, string expected)
         {
             ArrangeActAssert(number, expected);
         }
 
         [TestCase(3, "fizz")]
-        public void TestFor_fizz(int number, string expected)
+        public void NumberDivisibleByThree_Return_fizz(int number, string expected)
         {
             ArrangeActAssert(number, expected);
         }
 
         [TestCase(5, "buzz")]
-        public void TestFor_buzz(int number, string expected)
+        public void NumberDivisibleByFive_Return_buzz(int number, string expected)
         {
             ArrangeActAssert(number, expected);
         }
