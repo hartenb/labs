@@ -13,13 +13,16 @@ namespace VKH.FizzbBuzz
         
         public string Answer(int number)
         {
+
             var result = number.ToString();
 
             if (number % 3 == 0)
                 result = "fizz";
+            if (number % 5 == 0)
+                result = "buzz";
             if (number % 3 == 0 && number % 5 == 0)
                 result = "fizzbuzz";
-            
+         
             return result;
 
         }
@@ -64,6 +67,13 @@ namespace VKH.FizzbBuzz
         {
             ArrangeActAssert(number, expected);
         }
+
+        [TestCase(5, "buzz")]
+        public void TestFor_buzz(int number, string expected)
+        {
+            ArrangeActAssert(number, expected);
+        }
+
 
         private static void ArrangeActAssert(int number, string expected)
         {
