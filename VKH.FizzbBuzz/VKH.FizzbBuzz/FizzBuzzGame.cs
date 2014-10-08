@@ -1,29 +1,6 @@
-﻿using NUnit.Framework;
-
-
-namespace VKH.FizzbBuzz
+﻿namespace VKH.FizzbBuzz
 {
-    public class FizzBuzzGame : IFizzBuzzKata
-    {
-        
-        public string Answer(int number)
-        {
-
-            var result = number.ToString();
-
-            if (number % 3 == 0)
-                result = "fizz";
-            if (number % 5 == 0)
-                result = "buzz";
-            if (number % 3 == 0 && number % 5 == 0)
-                result = "fizzbuzz";
-         
-            return result;
-
-        }
-    }
-
-
+    
     public interface IFizzBuzzKata
     {
         /// <summary>
@@ -34,50 +11,41 @@ namespace VKH.FizzbBuzz
         string Answer(int number);
     }
 
-    [TestFixture]
-    public class FizzBuzzGameTests
+
+    public class FizzBuzzGame : IFizzBuzzKata
     {
-
-        [TestCase(0, "fizzbuzz")]
-        [TestCase(15, "fizzbuzz")]
-        public void NumberDivisibleByThreeAndFive_Return_fizzbuzz(int number, string expected)
+        
+        public string Answer(int number)
         {
-            ArrangeActAssert(number, expected);
-        }
 
-        [TestCase(14, "14")]
-        [TestCase(13 , "13")]
-        [TestCase(11, "11")]
-        [TestCase(8, "8")]
-        [TestCase(7, "7")]
-        [TestCase(4, "4")]
-        [TestCase(2, "2")]
-        [TestCase(1, "1")]
-        public void NumberNotDivisibleByThreeAndFive_Return_number(int number, string expected)
-        {
-            ArrangeActAssert(number, expected);
-        }
+            var result = number.ToString();
 
-        [TestCase(3, "fizz")]
-        public void NumberDivisibleByThree_Return_fizz(int number, string expected)
-        {
-            ArrangeActAssert(number, expected);
-        }
+            if (IsDivisibleByThree(number))
+                result = "fizz";
+            if (IsDivisibleByFive(number))
+                result = "buzz";
+            if (IsDivisibleByBoth(number))
+                result = "fizzbuzz";
+         
+            return result;
 
-        [TestCase(5, "buzz")]
-        public void NumberDivisibleByFive_Return_buzz(int number, string expected)
-        {
-            ArrangeActAssert(number, expected);
         }
 
 
-        private static void ArrangeActAssert(int number, string expected)
+        private static bool IsDivisibleByThree(int number)
         {
-            var fizzBuzzer = new FizzBuzzGame();
-
-            var result = fizzBuzzer.Answer(number);
-
-            Assert.AreEqual(expected, result);
+            return number % 3 == 0;
         }
+
+        private static bool IsDivisibleByFive(int number)
+        {
+            return number % 5 == 0;
+        }
+
+        private static bool IsDivisibleByBoth(int number)
+        {
+            return number%3 == 0 && number%5 == 0;
+        }
+
     }
 }
