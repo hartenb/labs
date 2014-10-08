@@ -5,7 +5,7 @@ namespace VKH.FizzbBuzz
     [TestFixture]
     public class FizzBuzzGameTests
     {
-        [TestFixtureSetUp]
+
         private static void ArrangeActAssert(int number, string expected)
         {
             var fizzBuzzer = new FizzBuzzGame();
