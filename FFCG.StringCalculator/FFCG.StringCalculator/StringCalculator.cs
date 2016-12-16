@@ -1,12 +1,6 @@
-﻿using System.ComponentModel;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography.X509Certificates;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FFCG.StringCalculator
 {
@@ -18,8 +12,8 @@ namespace FFCG.StringCalculator
             
             if (!numbers.Contains(",")) return Convert.ToInt32(numbers);
             
-            var ints = numbers.Split(',').Select(int.Parse).ToArray();
-            var sum = ints.Sum();
+            var integers = numbers.Split(',').Select(int.Parse).ToArray();
+            var sum = integers.Sum();
            
             return sum;
         }
@@ -28,7 +22,6 @@ namespace FFCG.StringCalculator
     [TestFixture]
     public class StringCalculatorTests
     { 
-
         [Test]
         public void Add_WithEmptyString_Return0()
         {
@@ -36,7 +29,6 @@ namespace FFCG.StringCalculator
         }
 
         [TestCase("1", 1)]
-        [TestCase("2", 2)]
         public void Add_WithSingleNumber_ReturnThatNumber(string numbers, int expected)
         {
             ArrangeActAssert(numbers, expected);
@@ -51,11 +43,9 @@ namespace FFCG.StringCalculator
         private static void ArrangeActAssert(string numbers, int expected)
         {
             var calculator = new StringCalculator();
-
             var result = calculator.Add(numbers);
 
             Assert.AreEqual(expected, result);
-
         }
     }
 }
