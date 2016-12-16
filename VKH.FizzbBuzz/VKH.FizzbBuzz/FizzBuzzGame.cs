@@ -1,6 +1,5 @@
 ﻿namespace VKH.FizzbBuzz
 {
-    
     public interface IFizzBuzzKata
     {
         /// <summary>
@@ -11,13 +10,10 @@
         string Answer(int number);
     }
 
-
     public class FizzBuzzGame : IFizzBuzzKata
     {
-        
         public string Answer(int number)
         {
-
             var result = number.ToString();
 
             if (IsDivisibleByThree(number))
@@ -28,9 +24,7 @@
                 result = "fizzbuzz";
          
             return result;
-
         }
-
 
         private static bool IsDivisibleByThree(int number)
         {
@@ -46,6 +40,5 @@
         {
             return number%3 == 0 && number%5 == 0;
         }
-
     }
 }

@@ -5,11 +5,9 @@ namespace VKH.FizzbBuzz
     [TestFixture]
     public class FizzBuzzGameTests
     {
-
         private static void ArrangeActAssert(int number, string expected)
         {
             var fizzBuzzer = new FizzBuzzGame();
-
             var result = fizzBuzzer.Answer(number);
 
             Assert.AreEqual(expected, result);
@@ -46,6 +44,5 @@ namespace VKH.FizzbBuzz
         {
             ArrangeActAssert(number, expected);
         }
-
     }
 }
