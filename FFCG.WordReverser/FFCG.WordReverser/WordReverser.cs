@@ -9,31 +9,31 @@ namespace FFCG.WordReverser
     {
         public string ReverseWords(string text)
         {
-            var listOfDelimiters = new List<Tuple<int, string>>();
-            var arrayOfWordsToReverse = text.Split(' ');
+            var delimiters = new List<Tuple<int, string>>();
+            var wordsToReverse = text.Split(' ');
             
-            for (var i = 0; i < arrayOfWordsToReverse.Length; i++)
+            for (var i = 0; i < wordsToReverse.Length; i++)
             {
-                var currentWord = arrayOfWordsToReverse[i];
+                var currentWord = wordsToReverse[i];
 
                 if (ContainsDelimiter(currentWord))
                 {
-                    CreateTuple(i, arrayOfWordsToReverse, listOfDelimiters);
+                    CreateTuple(i, wordsToReverse, delimiters);
                 }
             }
             
-            Array.Reverse(arrayOfWordsToReverse);
+            Array.Reverse(wordsToReverse);
             
-            if (listOfDelimiters.Count > 0)
+            if (delimiters.Count > 0)
             {
-                foreach(var t in listOfDelimiters) {
+                foreach(var t in delimiters) {
                     var positionToChange = t.Item1;
-                    var charToAdd = t.Item2;
-                    arrayOfWordsToReverse[positionToChange] = string.Concat(arrayOfWordsToReverse[positionToChange], charToAdd);
+                    var characterToAdd = t.Item2;
+                    wordsToReverse[positionToChange] = string.Concat(wordsToReverse[positionToChange], characterToAdd);
                 }
             }
            
-            return string.Join(" ", arrayOfWordsToReverse);
+            return string.Join(" ", wordsToReverse);
         }
 
         private static void CreateTuple(int i, IList<string> customString, ICollection<Tuple<int, string>> listOfTuples)
