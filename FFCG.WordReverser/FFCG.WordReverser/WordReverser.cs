@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace FFCG.WordReverser
@@ -11,12 +9,13 @@ namespace FFCG.WordReverser
     {
         public string ReverseWords(string text)
         {
-            List<Tuple<int, string>> listOfDelimiters = new List<Tuple<int, string>>();
-            string[] arrayOfWordsToReverse = text.Split(' ');
+            var listOfDelimiters = new List<Tuple<int, string>>();
+            var arrayOfWordsToReverse = text.Split(' ');
             
-            for (int i = 0; i < arrayOfWordsToReverse.Length; i++)
+            for (var i = 0; i < arrayOfWordsToReverse.Length; i++)
             {
-                string currentWord = arrayOfWordsToReverse[i];
+                var currentWord = arrayOfWordsToReverse[i];
+
                 if (ContainsDelimiter(currentWord))
                 {
                     CreateTuple(i, arrayOfWordsToReverse, listOfDelimiters);
@@ -27,10 +26,9 @@ namespace FFCG.WordReverser
             
             if (listOfDelimiters.Count > 0)
             {
-                for (int i = 0; i < listOfDelimiters.Count; i++)
-                {
-                    int positionToChange = listOfDelimiters[i].Item1;
-                    string charToAdd = listOfDelimiters[i].Item2;
+                foreach(var t in listOfDelimiters) {
+                    var positionToChange = t.Item1;
+                    var charToAdd = t.Item2;
                     arrayOfWordsToReverse[positionToChange] = string.Concat(arrayOfWordsToReverse[positionToChange], charToAdd);
                 }
             }
@@ -38,9 +36,9 @@ namespace FFCG.WordReverser
             return string.Join(" ", arrayOfWordsToReverse);
         }
 
-        private static void CreateTuple(int i, string[] customString, List<Tuple<int, string>> listOfTuples)
+        private static void CreateTuple(int i, IList<string> customString, ICollection<Tuple<int, string>> listOfTuples)
         {
-            Tuple<int, string> testTuple = new Tuple<int, string>(i, customString[i].Last().ToString());
+            var testTuple = new Tuple<int, string>(i, customString[i].Last().ToString());
             listOfTuples.Add(testTuple);
             customString[i] = customString[i].TrimEnd(customString[i].Last());
         }
@@ -57,7 +55,6 @@ namespace FFCG.WordReverser
         public void ReturnWordAsItComes(string text, string expected)
         {
             var reverser = new WordReverser();
-
             var result = reverser.ReverseWords(text);
 
             Assert.AreEqual(expected, result);
@@ -67,7 +64,6 @@ namespace FFCG.WordReverser
         public void ReturnTwoWordsInReverseOrder(string text, string expected)
         {
             var reverser = new WordReverser();
-
             var result = reverser.ReverseWords(text);
 
             Assert.AreEqual(expected, result);
@@ -78,7 +74,6 @@ namespace FFCG.WordReverser
         public void ReturnUnknownAmmountOfWordsInReverseOrder(string text, string expected)
         {
             var reverser = new WordReverser();
-
             var result = reverser.ReverseWords(text);
 
             Assert.AreEqual(expected, result);
@@ -88,11 +83,9 @@ namespace FFCG.WordReverser
         public void ReturnUnknownAmmountOfWordsInReverseOrderWithDelimiter(string text, string expected)
         {
             var reverser = new WordReverser();
-
             var result = reverser.ReverseWords(text);
 
             Assert.AreEqual(expected, result);
         }
-
     }
 }
